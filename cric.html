@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cricbuzz - Live Cricket Scores</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #026cd1;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            background: url('https://images.unsplash.com/photo-1502462041640-5625dc3e1e47?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            padding: 5rem 2rem;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero button {
+            padding: 0.8rem 2rem;
+            background-color: #ffcc00;
+            border: none;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .hero button:hover {
+            background-color: #e6b800;
+        }
+
+        .live-score {
+            padding: 2rem;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .ticker {
+            background-color: #e0e0e0;
+            margin-top: 1rem;
+            padding: 1rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            animation: tickerMove 15s linear infinite;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        @keyframes tickerMove {
+            from { transform: translateX(100%); }
+            to { transform: translateX(-100%); }
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #026cd1;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Cricbuzz</div>
+        <nav>
+            <ul>
+                <li><a href="#">Live Scores</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">Schedule</a></li>
+                <li><a href="#">Rankings</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Welcome to Cricbuzz</h1>
+        <p>Get live scores, news, and updates from around the cricket world!</p>
+        <button onclick="alert('Explore Latest Matches')">Explore Now</button>
+    </section>
+
+    <section class="live-score">
+        <h2>Live Score Ticker</h2>
+        <div id="scoreTicker" class="ticker">
+            Loading scores...
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Cricbuzz. All rights reserved by CricBuzz.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const ticker = document.getElementById("scoreTicker");
+
+            const scores = [
+                "India vs Australia - IND 210/3 (40.2)",
+                "England vs Pakistan - ENG 178/7 (35.0)",
+                "South Africa vs NZ - NZ 250/6 (48.4)",
+                "West Indies vs Sri Lanka - WI 160/2 (30.0)"
+            ];
+
+            ticker.textContent = scores.join(" | ");
+        });
+    </script>
+
+</body>
+</html>
